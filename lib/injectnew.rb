@@ -12,8 +12,13 @@ class Array
     result
   end
 
-
-
+  def reduce(operation)
+    result = nil
+    each do |value|
+      result ? result = result.send(operation,value) : result = value
+    end
+    result
+  end
 
 
 end
